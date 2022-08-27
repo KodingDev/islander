@@ -1,6 +1,7 @@
-<img align="left" width="64" height="64" src="fabric/src/main/resources/icon.png" alt="Mod logo"/>
+<!--suppress CheckImageSize -->
+<img align="left" width="80" height="80" src="fabric/src/main/resources/icon.png" alt="Mod logo">
 
-# islander
+# Islander
 
 🏝️ A companion mod to MCC Island!
 
