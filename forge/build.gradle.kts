@@ -1,5 +1,7 @@
 @file:Suppress("UnstableApiUsage")
 
+import net.fabricmc.loom.api.LoomGradleExtensionAPI
+
 plugins {
     id("com.github.johnrengelman.shadow") version "7.1.2"
 }
@@ -22,6 +24,7 @@ configurations {
 
 repositories {
     maven("https://pkgs.dev.azure.com/djtheredstoner/DevAuth/_packaging/public/maven/v1")
+    maven("https://thedarkcolour.github.io/KotlinForForge/")
 }
 
 dependencies {
@@ -34,6 +37,11 @@ dependencies {
 
     // Dev mods
     modRuntimeOnly("me.djtheredstoner:DevAuth-forge-latest:1.1.0")
+
+    // Kotlin
+    forgeRuntimeLibrary("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.0")
+    forgeRuntimeLibrary("org.jetbrains.kotlin:kotlin-reflect:1.7.0")
+    implementation("thedarkcolour:kotlinforforge:3.7.1")
 }
 
 tasks {
@@ -43,7 +51,6 @@ tasks {
             expand("version" to project.version)
         }
     }
-
 
     shadowJar {
         exclude("fabric.mod.json")
@@ -73,6 +80,13 @@ tasks {
 components.named<AdhocComponentWithVariants>("java") {
     withVariantsFromConfiguration(project.configurations.shadowRuntimeElements.get()) {
         skip()
+    }
+}
+
+configure<LoomGradleExtensionAPI> {
+    runConfigs.named("client") {
+        property("forge.logging.console.level", "debug")
+        property("forge.logging.markers", "SCAN,LOADING,CORE")
     }
 }
 

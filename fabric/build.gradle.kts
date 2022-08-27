@@ -38,6 +38,9 @@ dependencies {
     modRuntimeOnly("me.djtheredstoner:DevAuth-fabric:1.1.0")
     modRuntimeOnly("com.terraformersmc:modmenu:4.0.6")
     modRuntimeOnly("maven.modrinth:lazydfu:0.1.3")
+
+    // Kotlin
+    modImplementation("net.fabricmc:fabric-language-kotlin:1.8.3+kotlin.1.7.10")
 }
 
 tasks {

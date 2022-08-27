@@ -17,7 +17,7 @@
   "license": "GPL-3.0",
   "icon": "icon.png",
 
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
     "main": [
       "dev.koding.islander.fabric.IslanderFabric"

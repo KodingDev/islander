@@ -30,4 +30,5 @@ bin/
 
 # architectury
 
+.architectury-transformer
 run/

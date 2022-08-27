@@ -3,6 +3,9 @@ import net.fabricmc.loom.api.LoomGradleExtensionAPI
 plugins {
     id("architectury-plugin") version "3.4-SNAPSHOT"
     id("dev.architectury.loom") version "0.11.0-SNAPSHOT" apply false
+
+    kotlin("jvm") version "1.7.0" apply false
+    kotlin("plugin.serialization") version "1.7.0" apply false
 }
 
 architectury {
@@ -11,6 +14,8 @@ architectury {
 
 subprojects {
     apply(plugin = "dev.architectury.loom")
+    apply(plugin = "org.jetbrains.kotlin.jvm")
+    apply(plugin = "org.jetbrains.kotlin.plugin.serialization")
 
     configure<LoomGradleExtensionAPI> {
         silentMojangMappingsLicense()
