@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "id": "islander",
+  "version": "${version}",
+
+  "name": "Islander",
+  "description": "A companion mod to MCC Island!",
+  "authors": [
+    "KodingDev"
+  ],
+  "contact": {
+    "website": "https://koding.dev",
+    "repo": "https://github.com/KodingDev/islander",
+    "issues": "https://github.com/KodingDev/islander/issues"
+  },
+
+  "license": "GPL-3.0",
+  "icon": "icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.koding.islander.fabric.IslanderFabric"
+    ]
+  },
+  "mixins": [
+    "islander.mixins.json",
+    "islander-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "minecraft": ">=1.19.2"
+  }
+}
