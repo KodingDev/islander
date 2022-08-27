@@ -16,11 +16,12 @@
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        maven("https://maven.fabricmc.net/")
-        maven("https://maven.architectury.dev/")
-        maven("https://maven.minecraftforge.net/")
+package dev.koding.islander.fabric
+
+import net.fabricmc.api.ModInitializer
+
+class IslanderFabric : ModInitializer {
+    override fun onInitialize() {
+
     }
 }
