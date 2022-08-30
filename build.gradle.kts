@@ -68,7 +68,7 @@ dependencies {
     modImplementation("net.fabricmc:fabric-language-kotlin:1.8.3+kotlin.1.7.10")
 
     // DiscordIPC
-    implementation("com.github.jagrosh:DiscordIPC:18b6096")
+    implementation("com.github.jagrosh:DiscordIPC:-SNAPSHOT")
 
     // projectlombok
     compileOnly("org.projectlombok:lombok:1.18.24")

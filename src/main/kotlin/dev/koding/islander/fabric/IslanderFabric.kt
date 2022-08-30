@@ -27,17 +27,16 @@ import org.slf4j.LoggerFactory
 
 class IslanderFabric : ModInitializer {
     var logger: org.slf4j.Logger = LoggerFactory.getLogger("islander")
-    private var client: IPCClient? = null
+    private var client: IPCClient = IPCClient(1013975181833809970L)
     override fun onInitialize() {
         logger = LoggerFactory.getLogger("islander")
         connect()
     }
 
     private fun connect() {
-        client = IPCClient(1013975181833809970L)
-        client!!.setListener(RichPresenceHandler())
+        client.setListener(RichPresenceHandler())
         try {
-            client!!.connect(DiscordBuild.ANY)
+            client.connect(DiscordBuild.STABLE, DiscordBuild.CANARY, DiscordBuild.PTB)
             logger.info("Rich presence enabled.")
         } catch (e: NoDiscordClientException) {
             logger.info("No Discord client found. Skipping rich presence.")
