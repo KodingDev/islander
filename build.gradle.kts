@@ -47,6 +47,9 @@ repositories {
             includeGroup("maven.modrinth")
         }
     }
+
+    // For DiscordIPC atm
+    maven("https://jitpack.io")
 }
 
 dependencies {
@@ -63,6 +66,15 @@ dependencies {
 
     // Kotlin
     modImplementation("net.fabricmc:fabric-language-kotlin:1.8.3+kotlin.1.7.10")
+
+    // DiscordIPC
+    implementation("com.github.jagrosh:DiscordIPC:18b6096")
+
+    // projectlombok
+    compileOnly("org.projectlombok:lombok:1.18.24")
+    annotationProcessor("org.projectlombok:lombok:1.18.24")
+    testCompileOnly("org.projectlombok:lombok:1.18.24")
+    testAnnotationProcessor("org.projectlombok:lombok:1.18.24")
 }
 
 tasks {
